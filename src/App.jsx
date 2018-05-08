@@ -43,6 +43,13 @@ class App extends Component {
   }
 
   render() {
+    const steps = this.state.steps.map((step) => {
+      const ingredients = step.ingredients.map((ingredient) => {
+        return(<li>{ ingredient }</li>)
+      });
+      return (<article><p>{ step.description }</p>
+        <ul>{ ingredients }</ul></article>)
+    });
 
     return (
       <div>
@@ -53,6 +60,8 @@ class App extends Component {
         changeDescription={ this.changeDescription }
         changeIngredient={ this.changeIngredient }
         />
+        <h3>Recipe State:</h3>
+        { steps }
       </div>
     );
   }

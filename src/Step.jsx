@@ -12,7 +12,7 @@ class Step extends Component {
     });
     return (
       <div>
-        <p>Step { this.props.index }</p>
+        <p>Step { this.props.stepIndex + 1 }</p>
         <input onChange={ (event) => { this.props.changeDescription(this.props.stepIndex, event.target.value) } } name="description" value={ this.props.step.description }></input>
         { ingredients }
         <button onClick={ () => { this.props.addIngredient(this.props.stepIndex) } }>Add Ingredient</button>
